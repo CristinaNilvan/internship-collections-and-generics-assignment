@@ -86,6 +86,19 @@ namespace Project
             }
         }
 
+        public void SwapElements(int index, T element)
+        {
+            int elementIndex = -1;
+
+            for (int i = 0; i < _listSize; i++)
+            {
+                if (_elements[i].Equals(element))
+                    elementIndex = i;
+            }
+
+            SwapElements(index, elementIndex);
+        }
+
         private void CheckIndex(int index)
         {
             if (index < 0 || index >= _listSize || index >= _maxSize)
