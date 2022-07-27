@@ -19,9 +19,17 @@ namespace Project
         public string? Name { get; set; }
         public int Calories { get; set; }
 
-        public virtual string GenerateIngredientCode()
+        public override bool Equals(object? obj)
         {
-            return $"{Id}{Name[..2]}";
+            return obj is Ingredient ingredient &&
+                   Id == ingredient.Id &&
+                   Name == ingredient.Name &&
+                   Calories == ingredient.Calories;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Name, Calories);
         }
     }
 }
