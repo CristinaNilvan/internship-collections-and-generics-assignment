@@ -23,10 +23,10 @@ namespace Project
 
         public void Add(T element)
         {
-            _elements[_listSize++] = element;
-
             if (_listSize > _maxSize)
                 throw new InvalidOperationException("The list is full!");
+
+            _elements[_listSize++] = element;
         }
 
         public void Remove()
