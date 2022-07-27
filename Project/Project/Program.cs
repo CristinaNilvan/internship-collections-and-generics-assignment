@@ -22,10 +22,7 @@ Console.WriteLine("Initial elements: ");
 
 try
 {
-    for (int i = 0; i < myList.Count; i++)
-    {
-        Console.WriteLine(myList.GetElementAt(i).Name);
-    }
+    ListPrinter.PrintList(myList);
 }
 catch (ArgumentOutOfRangeException e)
 {
@@ -41,10 +38,7 @@ Console.WriteLine("Set an element: ");
 try
 {
     myList.SetElementAt(4, new Ingredient(5, "banana", 20));
-    for (int i = 0; i < myList.Count; i++)
-    {
-        Console.WriteLine(myList.GetElementAt(i).Name);
-    }
+    ListPrinter.PrintList(myList);
 }
 catch (ArgumentOutOfRangeException e)
 {
@@ -60,10 +54,7 @@ Console.WriteLine("Elements after deletion of the last element: ");
 try
 {
     myList.Remove();
-    for (int i = 0; i < myList.Count; i++)
-    {
-        Console.WriteLine(myList.GetElementAt(i).Name);
-    }
+    ListPrinter.PrintList(myList);
 }
 catch (InvalidOperationException e)
 {
@@ -83,10 +74,7 @@ Console.WriteLine("Elements after swapping 1: ");
 try
 {
     myList.SwapElements(2, 3);
-    for (int i = 0; i < myList.Count; i++)
-    {
-        Console.WriteLine(myList.GetElementAt(i).Name);
-    }
+    ListPrinter.PrintList(myList);
 }
 catch (ArgumentOutOfRangeException e)
 {
@@ -105,10 +93,7 @@ var ingredient2 = new Ingredient(2, "ou", 30);
 try
 {
     myList.SwapElements(ingredient1, ingredient2);
-    for (int i = 0; i < myList.Count; i++)
-    {
-        Console.WriteLine(myList.GetElementAt(i).Name);
-    }
+    ListPrinter.PrintList(myList);
 }
 catch (NoMatchException e)
 {
@@ -126,10 +111,7 @@ var ingredient3 = new Ingredient(3, "faina", 40);
 try
 {
     myList.SwapElements(0, ingredient3);
-    for (int i = 0; i < myList.Count; i++)
-    {
-        Console.WriteLine(myList.GetElementAt(i).Name);
-    }
+    ListPrinter.PrintList(myList);
 }
 catch (NoMatchException e)
 {
