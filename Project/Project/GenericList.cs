@@ -82,7 +82,7 @@ namespace Project
             }
             else
             {
-                throw new NoMatchException("Not valid elements!");
+                throw new NoMatchException("The elements are not valid!");
             }
         }
 
@@ -95,6 +95,9 @@ namespace Project
                 if (_elements[i].Equals(element))
                     elementIndex = i;
             }
+
+            if (elementIndex == -1)
+                throw new NoMatchException("The element is not valid!");
 
             SwapElements(index, elementIndex);
         }
