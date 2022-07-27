@@ -12,7 +12,7 @@ namespace Project
         {
             try
             {
-                for (int i = 0; i < 30; i++)
+                for (int i = 0; i < genericList.Count; i++)
                 {
                     Console.WriteLine(genericList.GetElementAt(i));
                 }
