@@ -31,5 +31,10 @@ namespace Project
         {
             return HashCode.Combine(Id, Name, Calories);
         }
+
+        public override string? ToString()
+        {
+            return $"{Id} {Name}";
+        }
     }
 }
