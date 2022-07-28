@@ -75,15 +75,10 @@ namespace Project
                     secondIndex = i;
             }
 
-            if (firstIndex != -1 && secondIndex != -1)
-            {
-                _elements[firstIndex] = secondElement;
-                _elements[secondIndex] = firstElement;
-            }
-            else
-            {
-                throw new NoMatchException("The elements are not valid!");
-            }
+            CheckIndexForSwapping(firstIndex);
+            CheckIndexForSwapping(secondIndex);
+
+            SwapElements(firstIndex, secondIndex); 
         }
 
         public void SwapElements(int index, T element)
@@ -96,8 +91,7 @@ namespace Project
                     elementIndex = i;
             }
 
-            if (elementIndex == -1)
-                throw new NoMatchException("The element is not valid!");
+            CheckIndexForSwapping(elementIndex);
 
             SwapElements(index, elementIndex);
         }
@@ -106,6 +100,12 @@ namespace Project
         {
             if (index < 0 || index >= _listSize || index >= _maxSize)
                 throw new ArgumentOutOfRangeException("Not a valid index!");
+        }
+
+        private void CheckIndexForSwapping(int index)
+        {
+            if (index == -1)
+                throw new NoMatchException("The element is not valid!");
         }
     }
 }
